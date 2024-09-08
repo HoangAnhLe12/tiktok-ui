@@ -8,6 +8,11 @@
    display: flex;
    justify-content: center;
    width: 100%;
+   position: fixed;
+   top: 0;
+   left: 0;
+   background-color: var(--white);
+   z-index: 10;
 }
 
 .inner {
@@ -17,6 +22,10 @@
    align-items: center;
    justify-content: space-between;
    padding: 0 var(--default-layout-horizontal-spacer);
+}
+
+.logo {
+   display: flex;
 }
 
 .badge {
@@ -30,7 +39,7 @@
    font-size: 1.4rem;
    font-weight: 600;
    color: var(--white);
-   font-family: 'ProximaNova', sans-serif;
+   font-family: var(--font-family);
    background-color: var(--primary);
 }
 

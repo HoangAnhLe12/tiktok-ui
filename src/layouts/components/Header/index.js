@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import classNames from 'classnames/bind';
 import { MdOutlineCloudUpload } from 'react-icons/md';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -23,7 +25,8 @@ import { Menu } from '~/components/Popper';
 import Button from '~/components/Button';
 import { NoficationsIcon } from '~/components/Icons';
 import Image from '~/components/Images';
-import Search from '~/components/Layout/components/Search';
+import Search from '~/layouts/components/Search';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 const MENU_ITEM = [
@@ -90,7 +93,9 @@ function Header() {
    return (
       <header className={cx('wrapper')}>
          <div className={cx('inner')}>
-            <img src={images.logo} alt="tiktok" />
+            <Link to={config.routes.home} className={cx('logo')}>
+               <img src={images.logo} alt="tiktok" />
+            </Link>
             <Search />
             <div className={cx('action')}>
                {currentUser ? (
@@ -113,7 +118,7 @@ function Header() {
                      <Button primary>Login</Button>
                   </>
                )}
-               <Menu items={currentUser ? userMenu : MENU_ITEM} onChange={handleMenuChange}>
+               <Menu hideOnClick={false} items={currentUser ? userMenu : MENU_ITEM} onChange={handleMenuChange}>
                   {currentUser ? (
                      <Image
                         className={cx('user-avatar')}

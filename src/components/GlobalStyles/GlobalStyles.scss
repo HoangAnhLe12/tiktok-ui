@@ -3,14 +3,17 @@
 
 :root {
    --primary: #fe2c55;
+   --white: #fff;
+   --black: #000;
+   --text-color: #161823;
+
+   //Font
+   --font-family: 'IBM Plex Sans', san-serif;
 
    //Default Layout
    --default-layout-header-height: 60px;
    --default-layout-header-width: 1150px;
    --default-layout-horizontal-spacer: 24px;
-   --white: #fff;
-   --black: #000;
-   --text-color: #161823;
 }
 
 * {
@@ -24,11 +27,39 @@ html {
 }
 
 body {
-   font-family: 'IBM Plex Sans', san-serif;
+   font-family: var(--font-family);
    font-size: 1.6rem;
    line-height: 1.5;
    text-rendering: optimizeSpeed;
    color: var(--text-color);
+   overflow-y: overlay;
+}
+
+//ScrollBar Css
+html ::-webkit-scrollbar {
+   border-radius: 0px;
+   width: 8px;
+}
+html *::-webkit-scrollbar {
+   border-radius: 0;
+   width: 8px;
+}
+html ::-webkit-scrollbar-thumb {
+   border-radius: 4px;
+   background-color: rgba(22, 24, 35, 0.06);
+}
+html *::-webkit-scrollbar-thumb {
+   border-radius: 4px;
+   background-color: rgba(22, 24, 35, 0.06);
+}
+
+html ::-webkit-scrollbar-track {
+   border-radius: 0px;
+   background-color: rgba(0, 0, 0, 0);
+}
+html *::-webkit-scrollbar-track {
+   border-radius: 0;
+   background-color: rgba(0, 0, 0, 0);
 }
 
 button,
